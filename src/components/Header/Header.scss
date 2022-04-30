@@ -1,0 +1,64 @@
+@use '../../assets/styles/utils' as utils;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: utils.$header-height;
+  z-index: utils.$header-z;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: utils.$header-content-max-width;
+    height: 100%;
+    width: 100%;
+    padding-inline: 2rem;
+    margin-inline: auto;
+
+    &-logo {
+      text-transform: uppercase;
+      font-size: utils.$fs-logo;
+      font-weight: utils.$fw-logo;
+
+      span {
+        font-size: calc(utils.$fs-logo * 0.5);
+      }
+    }
+
+    &-hamburger {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: utils.$fs-hamburger;
+      width: utils.$hamburger-size;
+      aspect-ratio: 1;
+      cursor: pointer;
+
+      .bx-menu,
+      .bx-x {
+        position: absolute;
+        transition: 0.3s ease-in-out;
+      }
+
+      .bx-x {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &.active {
+        .bx-menu {
+          opacity: 0;
+          visibility: hidden;
+        }
+        .bx-x {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
