@@ -21,7 +21,7 @@ const Layout = () => {
         </div>
       </div>
 
-      <Menu />
+      <Menu active={active} setActive={setActive} />
     </div>
   );
 };
