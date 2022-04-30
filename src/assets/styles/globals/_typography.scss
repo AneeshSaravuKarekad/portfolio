@@ -13,11 +13,12 @@ p {
 a,
 a:visited,
 a:active {
-  color: inherit;
+  color: unset;
   text-decoration: none;
 }
 
 ul,
-ol {
+ol,
+li {
   list-style-type: none;
 }
