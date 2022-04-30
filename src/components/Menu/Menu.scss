@@ -1,0 +1,59 @@
+@use '../../assets/styles/utils/' as utils;
+
+.menu {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100px);
+  transition: 0.5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  li {
+    font-size: utils.$fs-menu;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 3px;
+      // TODO: Add color variable
+      background-color: #fff;
+      transition: 0.3s ease-in-out;
+    }
+
+    &:hover {
+      padding-left: utils.$padding-hover;
+
+      &::before {
+        width: 15px;
+      }
+    }
+
+    li ~ li {
+      margin-top: 1rem;
+    }
+
+    span {
+      font-size: calc(utils.$fs-menu * 0.5);
+    }
+  }
+}
