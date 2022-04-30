@@ -11,15 +11,14 @@ const Layout = () => {
   return (
     <div className={`container ${active ? 'active' : ''}`}>
       <Header active={active} setActive={setActive} />
-
-      <div className="container__main">
-        <main className="main">
+      <div className="main-container">
+        <div className="main">
           <div className="content">
             <div className="overlay">
               <Outlet />
             </div>
           </div>
-        </main>
+        </div>
       </div>
 
       <Menu />
