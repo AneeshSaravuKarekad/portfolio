@@ -1,0 +1,8 @@
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #161616;
+  overflow-x: hidden;
+  // Set the children of the  element to be positioned in the 3d space
+  transform-style: preserve-3d;
+}
