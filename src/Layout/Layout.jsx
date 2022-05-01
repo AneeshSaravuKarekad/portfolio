@@ -11,6 +11,8 @@ const Layout = () => {
   return (
     <div className={`container ${active ? 'active' : ''}`}>
       <Header active={active} setActive={setActive} />
+      <div className="bg-circle1"></div>
+      <div className="bg-circle2"></div>
       <div className="main-container">
         <div className="main">
           <div className="content">
