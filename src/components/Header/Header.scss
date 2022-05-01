@@ -25,6 +25,14 @@
 
       span {
         font-size: calc(utils.$fs-logo * 0.5);
+
+        @include utils.media-up('tablet') {
+          font-size: calc(utils.$fs-logo);
+        }
+      }
+
+      @include utils.media-up('tablet') {
+        font-size: calc(utils.$fs-logo * 1.75);
       }
     }
 
