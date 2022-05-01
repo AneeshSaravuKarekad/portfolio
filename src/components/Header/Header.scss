@@ -22,6 +22,7 @@
       text-transform: uppercase;
       font-size: utils.$fs-logo;
       font-weight: utils.$fw-logo;
+      cursor: pointer;
 
       span {
         font-size: calc(utils.$fs-logo * 0.5);

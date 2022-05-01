@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Header.scss';
 
 const Header = ({ active, setActive }) => {
@@ -6,7 +7,9 @@ const Header = ({ active, setActive }) => {
       <div className="header__content">
         {/* Logo Section */}
         <div className="header__content-logo">
-          A<span>neesh</span> S<span>aravu</span> K<span>arekad</span>
+          <Link to="/">
+            A<span>neesh</span> S<span>aravu</span> K<span>arekad</span>
+          </Link>
         </div>
 
         {/* Hamburger Section */}
