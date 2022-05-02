@@ -23,12 +23,18 @@
       font-size: utils.$fs-logo;
       font-weight: utils.$fw-logo;
       cursor: pointer;
-
-      color: #fff;
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff,
+      opacity: 0;
+      color: var(--clr-neutral-100);
+      text-shadow: 0 0 5px var(--clr-neutral-100),
+        0 0 10px var(--clr-neutral-100), 0 0 20px var(--clr-neutral-100),
         0 0 40px var(--clr-primary-100), 0 0 80px var(--clr-primary-100),
         0 0 90px var(--clr-primary-100), 0 0 100px var(--clr-primary-100),
         0 0 150px var(--clr-primary-100);
+
+      &.active {
+        opacity: 1;
+        transition: all 5s ease;
+      }
 
       span {
         font-size: calc(utils.$fs-logo * 0.5);
