@@ -24,6 +24,12 @@
       font-weight: utils.$fw-logo;
       cursor: pointer;
 
+      color: #fff;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff,
+        0 0 40px var(--clr-primary-100), 0 0 80px var(--clr-primary-100),
+        0 0 90px var(--clr-primary-100), 0 0 100px var(--clr-primary-100),
+        0 0 150px var(--clr-primary-100);
+
       span {
         font-size: calc(utils.$fs-logo * 0.5);
 
