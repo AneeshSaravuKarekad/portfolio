@@ -6,7 +6,7 @@ const Header = ({ active, setActive }) => {
     <header className="header">
       <div className="header__content">
         {/* Logo Section */}
-        <div className="header__content-logo">
+        <div className={`header__content-logo ${active ? 'active' : ''}`}>
           <Link to="/">
             A<span>neesh</span> S<span>aravu</span> K<span>arekad</span>
           </Link>
