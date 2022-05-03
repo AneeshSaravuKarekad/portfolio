@@ -1,6 +1,6 @@
 import './Earth.scss';
 
-import { useFrame, useLoader, useThree } from '@react-three/fiber';
+import { useFrame, useLoader, useThree, extend } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import * as THREE from 'three';
 
@@ -9,6 +9,17 @@ import EarthNormalMap from '../../assets/textures/earth/8k_earth_normal_map.jpg'
 import EarthSpecularMap from '../../assets/textures/earth/8k_earth_specular_map.jpg';
 import EarthCloudsMap from '../../assets/textures/earth/8k_earth_clouds.jpg';
 import { useRef } from 'react';
+import { shaderMaterial } from '@react-three/drei';
+import atmosphereVertex from '../../utils/shaders/atmosphereVertex.glsl';
+import atmosphereFragment from '../../utils/shaders/atmosphereFragment.glsl';
+
+const AtmosphereShaderMaterial = shaderMaterial(
+  {},
+  atmosphereVertex,
+  atmosphereFragment
+);
+
+extend({ AtmosphereShaderMaterial });
 
 const Earth = (props) => {
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
@@ -18,6 +29,7 @@ const Earth = (props) => {
 
   const earthRef = useRef();
   const cloudsRef = useRef();
+  const glowRef = useRef();
 
   const earthRadius = 1;
 
@@ -27,6 +39,7 @@ const Earth = (props) => {
     const elapsedTime = clock.getElapsedTime();
 
     earthRef.current.rotation.y = elapsedTime / 30;
+    glowRef.current.rotation.y = -elapsedTime / 30;
     cloudsRef.current.rotation.y = elapsedTime / 35;
   });
 
@@ -52,6 +65,14 @@ const Earth = (props) => {
           metalness={0.4}
           roughness={0.7}
         />
+
+        <mesh scale={[1.1, 1.1, 1.1]} ref={glowRef}>
+          <sphereGeometry args={[earthRadius, 32, 32]} />
+          <atmosphereShaderMaterial
+            side={THREE.BackSide}
+            blending={THREE.AdditiveBlending}
+          />
+        </mesh>
       </mesh>
     </>
   );
