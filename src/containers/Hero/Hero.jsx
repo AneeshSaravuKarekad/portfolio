@@ -2,11 +2,10 @@ import './Hero.scss';
 
 import { Canvas } from '@react-three/fiber';
 import { Suspense, useRef } from 'react';
-import { Html, Scroll, ScrollControls, Stars } from '@react-three/drei';
+import { Stars } from '@react-three/drei';
 
 import Earth from '../../components/Earth/Earth';
 import Moon from '../../components/Moon/Moon';
-import Skills from '../Skills/Skills';
 import HeroContent from '../../components/HeroContent/HeroContent';
 
 const Hero = () => {
