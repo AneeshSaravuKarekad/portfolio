@@ -1,18 +1,46 @@
 import './Hero.scss';
 
-import Earth from '../../components/Earth/Earth';
 import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
+import { Suspense, useRef } from 'react';
+import { Html, Scroll, ScrollControls, Stars } from '@react-three/drei';
+
+import Earth from '../../components/Earth/Earth';
+import Moon from '../../components/Moon/Moon';
+import Skills from '../Skills/Skills';
+import HeroContent from '../../components/HeroContent/HeroContent';
 
 const Hero = () => {
+  const group1 = useRef();
+
   return (
-    <div className="hero__container">
-      <Canvas>
-        <Suspense fallback={null}>
-          <Earth />
-        </Suspense>
-      </Canvas>
-    </div>
+    <>
+      <HeroContent />
+
+      <div className="hero__container">
+        <Canvas camera={{ fov: 50, position: [0, 0, 6] }}>
+          <Suspense fallback={null}>
+            <pointLight
+              color={'#f6f3ea'}
+              position={[2, 0, 6]}
+              intensity={1.2}
+            />
+
+            <Stars
+              radius={300}
+              depth={60}
+              factor={7}
+              saturation={0}
+              fade={true}
+            />
+
+            <group ref={group1}>
+              <Earth />
+              <Moon />
+            </group>
+          </Suspense>
+        </Canvas>
+      </div>
+    </>
   );
 };
 
