@@ -14,10 +14,7 @@ const HeroContent = () => {
 
         <div className="cta-container">
           <button className="cta github">
-            <FaGithub />
-            <a href="https://github.com/AneeshSaravuKarekad" target="_blank">
-              Github
-            </a>
+            <a href="/contact">Let's Talk</a>
           </button>
           <button className="cta resume">
             <AiOutlineDownload size={20} />
