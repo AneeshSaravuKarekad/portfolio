@@ -1,6 +1,6 @@
 import './HeroContent.scss';
 
-import { FaGithub } from 'react-icons/fa';
+import { BsChatSquareDots } from 'react-icons/bs';
 import { AiOutlineDownload } from 'react-icons/ai';
 
 const HeroContent = () => {
@@ -14,6 +14,7 @@ const HeroContent = () => {
 
         <div className="cta-container">
           <button className="cta github">
+            <BsChatSquareDots />
             <a href="/contact">Let's Talk</a>
           </button>
           <button className="cta resume">
