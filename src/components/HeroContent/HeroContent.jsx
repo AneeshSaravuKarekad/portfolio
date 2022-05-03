@@ -15,11 +15,13 @@ const HeroContent = () => {
         <div className="cta-container">
           <button className="cta github">
             <FaGithub />
-            Github
+            <a href="https://github.com/AneeshSaravuKarekad" target="_blank">
+              Github
+            </a>
           </button>
           <button className="cta resume">
             <AiOutlineDownload size={20} />
-            <a href="../../../resume.pdf" download="AneeshSaravuKarekad">
+            <a href="../../../resume.pdf" download="AneeshSaravuKarekad-Resume">
               Resume
             </a>
           </button>
