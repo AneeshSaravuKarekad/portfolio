@@ -4,6 +4,10 @@
   box-sizing: inherit;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   box-sizing: border-box;
   font-size: 100%;
