@@ -1,6 +1,6 @@
 import './Earth.scss';
 
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame, useLoader, useThree } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import * as THREE from 'three';
 
@@ -8,7 +8,6 @@ import EarthDayMap from '../../assets/textures/earth/8k_earth_daymap.jpg';
 import EarthNormalMap from '../../assets/textures/earth/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../assets/textures/earth/8k_earth_specular_map.jpg';
 import EarthCloudsMap from '../../assets/textures/earth/8k_earth_clouds.jpg';
-import { Stars } from '@react-three/drei';
 import { useRef } from 'react';
 
 const Earth = (props) => {
@@ -22,6 +21,8 @@ const Earth = (props) => {
 
   const earthRadius = 1;
 
+  const { height, width } = useThree((state) => state.viewport);
+
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
 
@@ -31,9 +32,7 @@ const Earth = (props) => {
 
   return (
     <>
-      <pointLight color={'#f6f3ea'} position={[2, 0, 6]} intensity={1.2} />
-      <Stars radius={300} depth={60} factor={7} saturation={0} fade={true} />
-      <mesh ref={cloudsRef} position={[0, 0, 3]}>
+      <mesh ref={cloudsRef} position={[-width / 14, -0.25, 3]}>
         <sphereGeometry args={[earthRadius * 1.005, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
@@ -44,7 +43,7 @@ const Earth = (props) => {
         />
       </mesh>
 
-      <mesh ref={earthRef} position={[0, 0, 3]}>
+      <mesh ref={earthRef} position={[-width / 14, -0.25, 3]}>
         <sphereGeometry args={[earthRadius, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial
