@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 import { Header, Menu } from '../components';
 import { useState } from 'react';
+import BackgroundAnimation from '../components/BgAnimation/BgAnimation';
 
 const Layout = () => {
   const [active, setActive] = useState(false);
@@ -13,6 +14,7 @@ const Layout = () => {
       <Header active={active} setActive={setActive} />
       <div className="bg-circle1"></div>
       <div className="bg-circle2"></div>
+      <BackgroundAnimation />
       <div className="main-container">
         <div className="main">
           <div className="content">
