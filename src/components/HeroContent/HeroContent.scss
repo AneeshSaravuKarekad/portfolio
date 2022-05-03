@@ -13,11 +13,12 @@
   background-blend-mode: screen;
 
   &-inner {
-    max-width: 1024px;
+    max-width: 80vw;
     h1 {
       margin: 0;
     }
     .sub-intro {
+      // TODO: Update to match your project's design
       color: var(--clr-primary-100);
       font-size: calc(utils.$fs-menu * 0.8);
     }
