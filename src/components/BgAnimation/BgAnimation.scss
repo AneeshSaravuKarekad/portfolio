@@ -1,0 +1,14 @@
+@use '../../assets/styles/utils/' as utils;
+.bg-animation {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 40%;
+  height: 40%;
+  max-height: 100vh;
+  @include utils.media-up('tablet') {
+    top: 30%;
+  }
+  z-index: -1;
+}
