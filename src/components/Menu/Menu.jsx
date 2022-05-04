@@ -18,8 +18,8 @@ const Menu = ({ active, setActive }) => {
         </Link>
       </li>
       <li>
-        <Link to="/skills">
-          S<span>kills</span>
+        <Link to="/about">
+          A<span>bout</span>
         </Link>
       </li>
       <li>
@@ -27,11 +27,7 @@ const Menu = ({ active, setActive }) => {
           P<span>rojects</span>
         </Link>
       </li>
-      <li>
-        <Link to="/about">
-          A<span>bout</span>
-        </Link>
-      </li>
+
       <li>
         <Link to="/contact">
           C<span>ontact</span>
