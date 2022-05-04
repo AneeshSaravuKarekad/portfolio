@@ -1,7 +1,7 @@
 import 'boxicons/css/boxicons.min.css';
 
 import { Routes, Route } from 'react-router-dom';
-import { About, Contact, Hero, Projects, Skills } from './containers';
+import { About, Contact, Hero, Projects } from './containers';
 import Layout from './Layout/Layout';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Hero />} />
-          <Route path="skills" element={<Skills />} />
+
           <Route path="projects" element={<Projects />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
