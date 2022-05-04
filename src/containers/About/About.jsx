@@ -8,11 +8,12 @@ import {
   mdiLightbulbOutline,
 } from '@mdi/js';
 
-import ProfileImage from '../../assets/images/profilePhoto.jpg';
-
 const About = () => {
   return (
     <div className="about-wrapper">
+      <div className="about__header">
+        <h2>About</h2>
+      </div>
       <div className="services">
         <div className="hexagon-wrapper">
           <div className="hexagon">
@@ -65,13 +66,7 @@ const About = () => {
 
       <div className="about" id="About">
         <div className="about__content">
-          <div className="profile-image hexagon">
-            {/* <img
-              src={ProfileImage}
-              className="clip-image"
-              alt="Portrait image of Aneesh"
-            /> */}
-          </div>
+          <div className="profile-image hexagon"></div>
           <div>
             <h2 className="about__content-heading">Me, Myself & I</h2>
             <p className="about__content-paragraph">
