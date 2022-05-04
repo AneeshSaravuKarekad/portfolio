@@ -1,0 +1,121 @@
+@use '../../assets/styles/utils/' as utils;
+
+$hexagon-width: 100px;
+$hexagon-height: $hexagon-width / 1.73;
+$hexagon-margin-block: ($hexagon-height / 2);
+$hexagon-pseudo-border-inline: $hexagon-width / 2;
+
+.about-wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--clr-neutral-400);
+  .services {
+    margin-inline: auto;
+    width: 100%;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+
+    .hexagon-wrapper {
+      text-align: center;
+      h3 {
+        font-size: 1.5rem;
+      }
+      p {
+        opacity: 0.7;
+        width: 80%;
+        margin-inline: auto;
+      }
+      .hexagon {
+        position: relative;
+        width: $hexagon-width;
+        height: $hexagon-height;
+        background: var(--clr-primary-100);
+        margin: $hexagon-margin-block auto;
+        text-align: center;
+        transform: rotate(330deg);
+        svg {
+          width: 60%;
+          transform: rotate(-330deg);
+        }
+      }
+
+      .hexagon:before,
+      .hexagon:after {
+        content: '';
+        position: absolute;
+        border-inline: $hexagon-pseudo-border-inline solid transparent;
+      }
+
+      .hexagon:before {
+        content: '';
+        left: 0;
+        bottom: 99%;
+        border-bottom: $hexagon-margin-block solid var(--clr-primary-100);
+      }
+      .hexagon:after {
+        top: 99%;
+        left: 0;
+        border-top: $hexagon-margin-block solid var(--clr-primary-100);
+      }
+    }
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    max-width: 1200px;
+    margin-inline: auto;
+    margin-top: 5rem;
+
+    @include utils.media-up('tablet') {
+      flex-direction: row;
+    }
+    &__content {
+      display: flex;
+      font-size: utils.$fs-body;
+      @include utils.media-up('tablet') {
+        font-size: calc(utils.$fs-body * 1.2);
+      }
+
+      .profile-image {
+        width: 500px;
+        height: calc(500px / 1.73);
+        background: url('/src/assets/images/profilePhoto.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-right: 1rem;
+        clip-path: polygon(
+          25% 0%,
+          75% 0%,
+          100% 50%,
+          75% 100%,
+          25% 100%,
+          0% 50%
+        );
+      }
+
+      &-heading {
+        font-size: utils.$fs-heading;
+        color: var(--clr-primary-100);
+        margin-bottom: 1rem;
+        @include utils.media-up('tablet') {
+          font-size: calc(utils.$fs-heading * 1.5);
+        }
+      }
+      .paragraph2 {
+      }
+    }
+
+    &__skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+  }
+}
