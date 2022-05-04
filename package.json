@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/js": "^6.6.96",
+    "@mdi/react": "^1.6.0",
     "@react-three/drei": "^9.6.0",
     "@react-three/fiber": "^8.0.12",
     "boxicons": "^2.1.2",
