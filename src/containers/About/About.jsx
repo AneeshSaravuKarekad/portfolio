@@ -7,6 +7,7 @@ import {
   mdiRocket,
   mdiLightbulbOutline,
 } from '@mdi/js';
+import SkillsCarousel from '../../components/3DCarousel/SkillsCarousel';
 
 const About = () => {
   return (
@@ -74,13 +75,15 @@ const About = () => {
               on giving users a creative, intuitive and dynamic experience.
             </p>
             <p className="paragraph2">
-              Well-organized person, problem, solver, independent developer with
-              high attention to detail.
+              I am a well-organized person, problem solver, independent
+              developer with high attention to detail.
             </p>
           </div>
         </div>
 
-        <div className="about__skills">sadfaskdjfhsakljdhfjkasdfhajksdfh</div>
+        <div className="about__skills">
+          <SkillsCarousel />
+        </div>
       </div>
     </div>
   );
