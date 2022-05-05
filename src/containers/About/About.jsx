@@ -1,6 +1,6 @@
 import './About.scss';
 
-import Icon from '@mdi/react';
+import { Icon } from '@mdi/react';
 import {
   mdiSpeedometer,
   mdiCellphoneLink,
