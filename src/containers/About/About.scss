@@ -1,9 +1,9 @@
 @use '../../assets/styles/utils/' as utils;
 
 $hexagon-width: 100px;
-$hexagon-height: $hexagon-width / 1.73;
-$hexagon-margin-block: ($hexagon-height / 2);
-$hexagon-pseudo-border-inline: $hexagon-width / 2;
+$hexagon-height: calc($hexagon-width / 1.73);
+$hexagon-margin-block: calc($hexagon-height / 2);
+$hexagon-pseudo-border-inline: calc($hexagon-width / 2);
 
 .about-wrapper {
   width: 100%;
