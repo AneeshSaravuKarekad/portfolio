@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --spinner-size: 150px;
+  --loading-screen-background: #1c1c1c;
+  --font-family: 'Red Hat Display', sans-serif;
+  --text-color: white;
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.loading-screen {
+  background-color: var(--loading-screen-background, #1c1c1c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 500;
+  cursor: none;
+}
+.spinner {
+  width: var(--spinner-size, 64px) !important;
+  height: var(--spinner-size, 64px) !important;
+  background: linear-gradient(180deg, #0f6fff 0%, rgba(0, 0, 0, 0.1) 25%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 2s cubic-bezier(0.52, 0.1, 0.27, 0.87) infinite;
+  position: relative;
+}
+.spinner::after {
+  content: '';
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 50%;
+  background: var(--loading-screen-background, #1c1c1c);
+  z-index: 01;
+}
+.spinner-container img {
+  height: calc(var(--spinner-size, 64px) / 100 * 75);
+  width: calc(var(--spinner-size, 64px) / 100 * 75);
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 02;
+  object-position: center;
+}
+.loading-screen p {
+  font-family: var(--font-family, sans-serif);
+  color: var(--text-color, white);
+  opacity: 0.5;
+  font-weight: 300;
+}
