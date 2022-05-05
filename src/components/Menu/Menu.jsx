@@ -13,12 +13,22 @@ const Menu = ({ active, setActive }) => {
   return (
     <ul className={`menu ${active ? 'active' : ''}`}>
       <li>
-        <Link to="/">
+        <Link
+          to="/"
+          onClick={() => {
+            window.location.href = '/';
+          }}
+        >
           H<span>ome</span>
         </Link>
       </li>
       <li>
-        <Link to="/about">
+        <Link
+          to="/about"
+          onClick={() => {
+            window.location.href = '/about';
+          }}
+        >
           A<span>bout</span>
         </Link>
       </li>
