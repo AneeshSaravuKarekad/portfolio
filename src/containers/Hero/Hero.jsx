@@ -16,7 +16,10 @@ const Hero = () => {
       <HeroContent />
 
       <div className="hero__container">
-        <Canvas camera={{ fov: 50, position: [0, 0, 6] }}>
+        <Canvas
+          camera={{ fov: 50, position: [0, 0, 6] }}
+          style={{ width: '100vw', height: '100vh' }}
+        >
           <Suspense fallback={null}>
             <pointLight
               color={'#f6f3ea'}
