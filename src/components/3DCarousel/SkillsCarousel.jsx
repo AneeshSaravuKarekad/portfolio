@@ -1,7 +1,7 @@
 import * as THREE from 'three';
-import { useRef, useState, useMemo, useEffect } from 'react';
+import { useRef, useState, useMemo, useEffect, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Text, TrackballControls, OrbitControls } from '@react-three/drei';
+import { Text, OrbitControls, Html } from '@react-three/drei';
 
 function Word({ children, ...props }) {
   const color = new THREE.Color();
