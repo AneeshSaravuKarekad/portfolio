@@ -7,18 +7,25 @@ $hexagon-pseudo-border-inline: calc($hexagon-width / 2);
 
 .about-wrapper {
   width: 100%;
-  height: 100vh;
+  // height: 100%;
   background-color: var(--clr-neutral-400);
+  // overflow-y: scroll;
+  @include utils.media-up('tablet') {
+    overflow-y: hidden !important;
+  }
 
   .about__header {
     width: 100%;
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 3rem;
+    @include utils.media-up('tablet') {
+      margin-top: 5rem;
+    }
+
     h2 {
       font-size: utils.$fs-heading;
       position: relative;
       display: inline-block;
-
       &::after {
         content: '';
         position: absolute;
@@ -42,7 +49,10 @@ $hexagon-pseudo-border-inline: calc($hexagon-width / 2);
     .hexagon-wrapper {
       text-align: center;
       h3 {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        @include utils.media-up('tablet') {
+          font-size: 1.5rem;
+        }
         margin-bottom: 1rem;
         animation: slide-bottom-in 1s ease-in-out;
       }
@@ -50,18 +60,30 @@ $hexagon-pseudo-border-inline: calc($hexagon-width / 2);
         opacity: 0.6;
         width: 80%;
         margin-inline: auto;
+        font-size: 0.75rem;
+        @include utils.media-up('tablet') {
+          font-size: 1rem;
+        }
       }
       .hexagon {
         position: relative;
-        width: $hexagon-width;
-        height: $hexagon-height;
+        width: calc($hexagon-width/2);
+        height: calc($hexagon-height / 2);
+        margin: calc($hexagon-margin-block / 2) auto;
+        @include utils.media-up('tablet') {
+          width: $hexagon-width;
+          height: $hexagon-height;
+          margin: $hexagon-margin-block auto;
+        }
         background: var(--clr-primary-100);
-        margin: $hexagon-margin-block auto;
         text-align: center;
         transform: rotate(330deg);
         animation: rotate-hexagon 2s ease-in-out;
         svg {
-          width: 60%;
+          width: 20%;
+          @include utils.media-up('tablet') {
+            width: 60%;
+          }
           transform: rotate(-330deg);
         }
       }
@@ -70,19 +92,30 @@ $hexagon-pseudo-border-inline: calc($hexagon-width / 2);
       .hexagon:after {
         content: '';
         position: absolute;
-        border-inline: $hexagon-pseudo-border-inline solid transparent;
+        border-inline: calc($hexagon-pseudo-border-inline / 2) solid transparent;
+        @include utils.media-up('tablet') {
+          border-inline: ($hexagon-pseudo-border-inline) solid transparent;
+        }
       }
 
       .hexagon:before {
         content: '';
         left: 0;
         bottom: 99%;
-        border-bottom: $hexagon-margin-block solid var(--clr-primary-100);
+        border-bottom: calc($hexagon-margin-block/2) solid
+          var(--clr-primary-100);
+
+        @include utils.media-up('tablet') {
+          border-bottom: $hexagon-margin-block solid var(--clr-primary-100);
+        }
       }
       .hexagon:after {
         top: 99%;
         left: 0;
-        border-top: $hexagon-margin-block solid var(--clr-primary-100);
+        border-top: calc($hexagon-margin-block / 2) solid var(--clr-primary-100);
+        @include utils.media-up('tablet') {
+          border-top: ($hexagon-margin-block) solid var(--clr-primary-100);
+        }
       }
     }
 
@@ -100,6 +133,7 @@ $hexagon-pseudo-border-inline: calc($hexagon-width / 2);
 
   .about {
     display: flex;
+    // height: 100%;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
@@ -107,6 +141,7 @@ $hexagon-pseudo-border-inline: calc($hexagon-width / 2);
     max-width: 1440px;
     margin-inline: auto;
     margin-top: 3rem;
+
     @include utils.media-up('tablet') {
       flex-direction: row;
     }
@@ -114,14 +149,20 @@ $hexagon-pseudo-border-inline: calc($hexagon-width / 2);
       display: flex;
       font-size: utils.$fs-body;
       max-width: 800px;
+      margin-inline: 2rem;
       animation: slide-left-in 1s ease-in-out;
       @include utils.media-up('tablet') {
         font-size: calc(utils.$fs-body * 1.1);
+        margin-inline: 0;
       }
 
       .profile-image {
-        width: 800px;
-        height: calc(600px / 1.73);
+        @include utils.media-up('tablet') {
+          display: block;
+          width: 800px;
+          height: calc(600px / 1.73);
+        }
+        display: none;
         background: url('/src/assets/images/profilePhoto.jpg');
         background-size: cover;
         background-position: -70px;
@@ -142,9 +183,10 @@ $hexagon-pseudo-border-inline: calc($hexagon-width / 2);
       }
 
       &-heading {
-        font-size: utils.$fs-heading;
+        font-size: calc(utils.$fs-heading / 1.5);
         color: var(--clr-primary-100);
         margin-bottom: 1rem;
+
         @include utils.media-up('tablet') {
           font-size: calc(utils.$fs-heading * 1.5);
         }
@@ -161,11 +203,31 @@ $hexagon-pseudo-border-inline: calc($hexagon-width / 2);
 
     &__skills {
       display: flex;
-      width: 50%;
-      height: 400%;
+
       justify-content: center;
       align-items: flex-start;
       cursor: grab;
+      @media screen and (max-width: 800px) {
+        margin-top: 100px;
+        background-color: var(--clr-neutral-400);
+        width: 100%;
+        height: 100%;
+        div {
+          height: 100% !important;
+          div {
+            width: 300px !important;
+            height: 300px !important;
+            right: -85%;
+            top: 15%;
+            transform: translate(-100%);
+          }
+        }
+      }
+
+      @include utils.media-up('tablet') {
+        width: 50%;
+        height: 400%;
+      }
     }
   }
 }
