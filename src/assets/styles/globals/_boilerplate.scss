@@ -31,4 +31,16 @@ body {
   background-color: hsl(0, 0%, 11%);
   // TODO: Update to match your project's design
   color: hsl(0, 0%, 100%);
+  // font-family: 'Big Shoulders Text';
+  font-family: 'Big Shoulders Stencil Text', cursive;
+}
+
+@font-face {
+  font-family: 'Big Shoulders Text', cursive;
+  src: url('../../fonts/BigShouldersText-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'Big Shoulders Stencil Text', cursive;
+  src: url('/src/assets/fonts/BigShouldersStencilText-VariableFont_wght.ttf');
 }
